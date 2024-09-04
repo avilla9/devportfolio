@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 8rem;
+
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
