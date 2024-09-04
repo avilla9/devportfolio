@@ -3,9 +3,59 @@
     --bg: #f5f5f5;
     --primary: #3AA6B9;
     --secondary: #E88D67;
+    --p-font: #000;
+    --title: #00434e;
+    --subtitle: #fff;
+    --primary-button: #ff4d00;
+    --primary-button-hover: #fc824e;
   } @else if ($theme == 'dark') {
-    --bg: #45474B;
+    --bg: #050505;
     --primary: #00337C;
     --secondary: #750E21;
+    --p-font: #eeeeee;
+    --title: #00a1b9;
+    --subtitle: #000;
+    --primary-button: #350c00;
+    --primary-button-hover: #331c15;
+  }
+}
+
+.big-title {
+  font-size: 4rem;
+  color: var(--title);
+}
+
+.big-subtitle {
+  font-size: 3rem;
+  color: var(--subtitle);
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--title);
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: var(--subtitle);
+}
+
+.body {
+  font-size: 1.2rem;
+  color: var(--p-font);
+}
+
+button {
+  cursor: pointer;
+  &.primary {
+    @extend .body;
+    background-color: var(--primary-button);
+    font-weight: bold;
+    border-radius: .25rem;
+    padding: .25rem .5rem;
+
+    &:hover {
+      background-color: var(--primary-button-hover);
+    }
   }
 }
