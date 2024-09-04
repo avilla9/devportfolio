@@ -1,0 +1,16 @@
+.welcome {
+  position: relative;
+  display: flex;
+  padding: 3rem 0;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.portrait {
+  img {
+    border-radius: .6rem;
+    width: 24rem;
+    height: 24rem;
+    object-fit: cover;
+  }
+}
