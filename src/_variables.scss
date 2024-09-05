@@ -5,7 +5,7 @@
     --secondary: #E88D67;
     --p-font: #000;
     --title: #00434e;
-    --subtitle: #fff;
+    --subtitle: #000;
     --primary-button: #ff4d00;
     --primary-button-hover: #fc824e;
   } @else if ($theme == 'dark') {
@@ -14,7 +14,7 @@
     --secondary: #750E21;
     --p-font: #eeeeee;
     --title: #00a1b9;
-    --subtitle: #000;
+    --subtitle: #fff;
     --primary-button: #350c00;
     --primary-button-hover: #331c15;
   }
@@ -43,6 +43,8 @@
 .body {
   font-size: 1.2rem;
   color: var(--p-font);
+  text-align: justify;
+  letter-spacing: 0.01rem;
 }
 
 button {
