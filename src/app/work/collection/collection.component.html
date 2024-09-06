@@ -8,7 +8,7 @@
     >
       <div class="info">
         <div class="title">{{project.title}}</div>
-        @if (isOpen(project)) {
+        @if (!isOpen(project)) {
           <div class="body">{{project.summary}}</div>
         }
         @else {
