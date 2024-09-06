@@ -8,6 +8,8 @@ import { LayoutModule } from './layout/layout.module';
 import { AboutComponent } from './about/about.component';
 import { WorkComponent } from './work/work.component';
 import { CollectionComponent } from './work/collection/collection.component';
+import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,11 @@ import { CollectionComponent } from './work/collection/collection.component';
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+    NgSelectComponent,
+    NgSelectModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

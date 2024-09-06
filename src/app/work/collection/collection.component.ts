@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, ElementRef, HostBinding, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-collection',
@@ -8,6 +8,7 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 export class CollectionComponent implements OnInit {
   data = [
     {
+      id: 1,
       title: 'Lorem ipsum dolor sit amet',
       summary: 'Ullamco irure dolor minim proident incididunt consequat commodo commodo duis duis occaecat quis.',
       description: 'Eiusmod tempor duis Lorem aute magna proident ullamco sint duis occaecat minim. Nulla minim cillum qui consectetur exercitation labore nisi cillum. Aliquip et ea reprehenderit nisi cupidatat laboris. Reprehenderit laborum consequat aliqua dolor proident. Qui dolor irure elit laborum officia eu duis labore.',
@@ -19,6 +20,7 @@ export class CollectionComponent implements OnInit {
       ]
     },
     {
+      id: 2,
       title: 'Lorem ipsum dolor sit amet',
       summary: 'Ullamco irure dolor minim proident incididunt consequat commodo commodo duis duis occaecat quis.',
       description: 'Eiusmod tempor duis Lorem aute magna proident ullamco sint duis occaecat minim. Nulla minim cillum qui consectetur exercitation labore nisi cillum. Aliquip et ea reprehenderit nisi cupidatat laboris. Reprehenderit laborum consequat aliqua dolor proident. Qui dolor irure elit laborum officia eu duis labore.',
@@ -29,6 +31,7 @@ export class CollectionComponent implements OnInit {
       ]
     },
     {
+      id: 3,
       title: 'Lorem ipsum dolor sit amet',
       summary: 'Ullamco irure dolor minim proident incididunt consequat commodo commodo duis duis occaecat quis.',
       description: 'Eiusmod tempor duis Lorem aute magna proident ullamco sint duis occaecat minim. Nulla minim cillum qui consectetur exercitation labore nisi cillum. Aliquip et ea reprehenderit nisi cupidatat laboris. Reprehenderit laborum consequat aliqua dolor proident. Qui dolor irure elit laborum officia eu duis labore.',
@@ -39,6 +42,7 @@ export class CollectionComponent implements OnInit {
       ]
     },
     {
+      id: 4,
       title: 'Lorem ipsum dolor sit amet',
       summary: 'Ullamco irure dolor minim proident incididunt consequat commodo commodo duis duis occaecat quis.',
       description: 'Eiusmod tempor duis Lorem aute magna proident ullamco sint duis occaecat minim. Nulla minim cillum qui consectetur exercitation labore nisi cillum. Aliquip et ea reprehenderit nisi cupidatat laboris. Reprehenderit laborum consequat aliqua dolor proident. Qui dolor irure elit laborum officia eu duis labore.',
@@ -50,19 +54,7 @@ export class CollectionComponent implements OnInit {
     }
   ];
 
-  selected: any;
-
-  select(item: any) {
-    if (this.isOpen(item)) {
-      this.selected = false;
-      return;
-    }
-    this.selected = item;
-  }
-
-  isOpen(item: any) {
-    return this.selected == item;
-  }
+  skillOptions = ['python', 'php', 'laravel'];
 
   constructor() { }
 

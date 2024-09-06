@@ -1,19 +1,25 @@
 <app-layout>
+  <div class="filter">
+    <input
+      type="text"
+      class="search"
+      name="search"
+      placeholder="search project"
+    >
+    <ng-select
+      name="filter"
+      [items]=skillOptions
+      placeholder="filter by skill"
+    ></ng-select>
+  </div>
   <div class="container">
     <div
       class="card"
-      *ngFor="let project of data; let i as index"
-      [ngClass]="{open: isOpen(project)}"
-      (click)="select(project)"
+      *ngFor="let project of data"
     >
       <div class="info">
-        <div class="title">{{project.title}}</div>
-        @if (!isOpen(project)) {
-          <div class="body">{{project.summary}}</div>
-        }
-        @else {
-          <div class="body">{{project.description}}</div>
-        }
+        <div class="subtitle">{{project.title}}</div>
+        <div class="body">{{project.summary}}</div>
         <div class="tags">
           <div
             *ngFor="let skill of project.skills"
