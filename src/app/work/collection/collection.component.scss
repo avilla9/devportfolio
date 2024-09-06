@@ -20,17 +20,19 @@
   }
 
   &.open {
-    width: 100%;
-    height: auto;
+    grid-column: span 2;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
   }
 
   .info {
     cursor: pointer;
     display: flex;
+    flex: 1;
     flex-direction: column;
     padding: 2rem;
     row-gap: 1rem;
-    max-width: 60%;
 
     .tags {
       display: flex;
@@ -61,8 +63,8 @@
 
 img {
   cursor: pointer;
-  height: 20rem;
-  width: 20rem;
+  width: 15rem;
+  max-height: 20rem;
   object-fit: cover;
   border-radius: .5rem;
 }
