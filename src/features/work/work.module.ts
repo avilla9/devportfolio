@@ -17,8 +17,7 @@ import { RouterModule } from '@angular/router';
     NgSelectComponent,
     NgSelectModule,
     RouterModule.forChild([
-      { path: '', component: WorkComponent },
-      { path: 'collection', component: CollectionComponent },
+      { path: '', component: CollectionComponent },
       { path: 'detail/:title', component: DetailComponent }
     ])
   ]

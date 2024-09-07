@@ -6,13 +6,6 @@ import { Router } from '@angular/router';
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss']
 })
-export class WorkComponent implements OnInit {
-  constructor(private router: Router) { }
+export class WorkComponent {
 
-  redirect(path: string) {
-    this.router.navigate([path]);
-  }
-
-  ngOnInit(): void {
-  }
 }
