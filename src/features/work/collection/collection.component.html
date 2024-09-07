@@ -16,6 +16,7 @@
     <div
       class="card"
       *ngFor="let project of data"
+      (click)="open(project.title)"
     >
       <div class="info">
         <div class="subtitle">{{project.title}}</div>
