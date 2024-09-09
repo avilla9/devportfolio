@@ -22,7 +22,7 @@ export class CollectionComponent implements OnInit {
   }
 
   open(data: ProjectInterface) {
-    this.router.navigate(['projects/detail', data.id, data.title]);
+    this.router.navigate(['projects/detail', data.title, data.id]);
   }
 
   ngOnInit(): void {
