@@ -3,7 +3,7 @@
 @use '../../../styles/mixins' as *;
 
 .experience-section {
-  padding: 6rem 0;
+  padding: 3rem 0;
   background: $light;
   position: relative;
   overflow: hidden;
@@ -50,8 +50,29 @@
   .timeline {
     position: relative;
     max-width: 900px;
+    height: 36rem;
     margin: 0 auto;
-    padding: 2rem 0;
+    overflow-y: scroll;
+    transition: all 0.3s ease;
+    padding: 0 .5rem 0 0;
+
+    &::-webkit-scrollbar {
+      width: 8px; /* Slim scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent; /* Invisible track */
+      margin: 10px 0; /* Space at top & bottom */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888; /* Scrollbar color */
+      border-radius: 4px; /* Rounded corners */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555; /* Darker on hover */
+    }
 
     &-progress {
       position: absolute;
@@ -67,7 +88,7 @@
     &-item {
       position: relative;
       padding-left: 100px;
-      margin-bottom: 4rem;
+      padding-bottom: 4rem;
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 0.8s forwards;

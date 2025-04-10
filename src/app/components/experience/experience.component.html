@@ -12,15 +12,14 @@
 
     <div class="timeline">
       <div
-        class="timeline-progress"
-        #timelineProgress
-      ></div>
-
-      <div
         class="timeline-item"
         *ngFor="let exp of experiences; let i = index"
         [style.--animation-order]="i"
       >
+        <div
+          class="timeline-progress"
+          #timelineProgress
+        ></div>
         <div class="timeline-marker">
           <div class="timeline-dot"></div>
         </div>
