@@ -18,6 +18,7 @@ interface Experience {
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
+  expandedItems: {[key: number]: boolean} = {};
   experiences: Experience[] = [
     {
       company: 'Quality Compusoft',
@@ -116,4 +117,8 @@ export class ExperienceComponent {
       technologies: ['AngularJS', 'Laravel', 'SQL', 'Tailwind CSS', 'System Migration']
     }
   ];
+
+  toggleItem(index: number): void {
+    this.expandedItems[index] = !this.expandedItems[index];
+  }
 }

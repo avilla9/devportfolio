@@ -19,7 +19,7 @@ export class AboutComponent {
 
   contactInfo = [
     { icon: 'mail', value: 'armandojvilla9@gmail.com', link: 'mailto:armandojvilla9@gmail.com' },
-    { icon: 'phone', value: '(+58) 424 2141712', link: 'tel:+584242141712' },
+    { icon: 'phone', value: 'Whatsapp', link: 'http://wa.me/584242141712' },
     { icon: 'code', value: 'GitHub', link: 'https://github.com/avilla9' },
     { icon: 'linkedin', value: 'LinkedIn', link: 'https://www.linkedin.com/in/armando-villanueva-711110167/' }
   ];

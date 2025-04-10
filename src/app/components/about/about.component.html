@@ -11,7 +11,7 @@
 
     <div class="about-content">
       <div class="about-text">
-        <h3 class="about-subtitle">Full-stack Software Engineer</h3>
+        <h3 class="about-subtitle">Full Stack Developer</h3>
         <p class="about-bio">{{ bio }}</p>
 
         <div class="contact-info">
@@ -32,25 +32,22 @@
       </div>
 
       <div class="about-image">
-        <div class="image-wrapper">
-          <div class="glow"></div>
-          <img
-            src="assets/images/profile.jpg"
-            alt="Armando Villanueva"
-            class="profile-image"
+        <img
+          src="assets/images/profile.jpg"
+          alt="Armando Villanueva"
+          class="profile-image"
+        >
+        <!-- <div class="tech-icons">
+          <div
+            class="icon"
+            *ngFor="let icon of ['angular', 'react', 'laravel', 'python', 'nodejs']"
           >
-          <div class="tech-icons">
-            <div
-              class="icon"
-              *ngFor="let icon of ['angular', 'react', 'laravel', 'python', 'nodejs']"
+            <img
+              [src]="'assets/images/tech/' + icon + '.svg'"
+              [alt]="icon"
             >
-              <img
-                [src]="'assets/images/tech/' + icon + '.svg'"
-                [alt]="icon"
-              >
-            </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

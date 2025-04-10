@@ -84,8 +84,8 @@
 
     &-marker {
       position: absolute;
-      left: 48px;
-      top: 0;
+      left: 42px;
+      top: 32px;
       z-index: 2;
 
       @include mobile {
