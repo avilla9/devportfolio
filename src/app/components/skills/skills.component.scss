@@ -1,0 +1,186 @@
+// components/skills/skills.component.scss
+.skills-section {
+  padding: 6rem 0;
+  background: white;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: $primary;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: rgba($dark, 0.7);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .skills-visualization {
+    canvas {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      border-radius: 8px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .skills-details {
+    .skills-category {
+      margin-bottom: 3rem;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: $dark;
+        position: relative;
+        padding-bottom: 0.5rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 50px;
+          height: 2px;
+          background: $primary;
+        }
+      }
+    }
+
+    .skill-bars {
+      .skill-bar {
+        margin-bottom: 1.5rem;
+
+        .skill-info {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 0.5rem;
+
+          .skill-name {
+            font-weight: 600;
+            color: $dark;
+          }
+
+          .skill-percent {
+            color: $primary;
+            font-weight: 600;
+          }
+        }
+
+        .skill-progress {
+          height: 8px;
+          background: rgba($dark, 0.1);
+          border-radius: 4px;
+          overflow: hidden;
+
+          .skill-progress-bar {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1.5s ease-out;
+          }
+        }
+      }
+    }
+
+    .skill-circles {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 1.5rem;
+
+      .skill-circle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .circle-container {
+          position: relative;
+          width: 80px;
+          height: 80px;
+          margin-bottom: 0.5rem;
+        }
+
+        .circle-chart {
+          width: 100%;
+          height: 100%;
+
+          .circle-bg {
+            fill: none;
+            stroke: rgba($dark, 0.1);
+            stroke-width: 2;
+          }
+
+          .circle-fill {
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            animation: circle-fill-animation 1.5s ease-out forwards;
+            transform-origin: center;
+            transform: rotate(-90deg);
+          }
+        }
+
+        .circle-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: $dark;
+        }
+
+        .circle-label {
+          font-size: 0.8rem;
+          text-align: center;
+          color: rgba($dark, 0.8);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@keyframes circle-fill-animation {
+  0% {
+    stroke-dasharray: 0, 100;
+  }
+}

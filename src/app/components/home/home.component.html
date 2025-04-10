@@ -1,0 +1,229 @@
+<div class="home-container">
+  <!-- Efecto de luz dinámica -->
+  <div
+    class="dynamic-light"
+    [style.transform]="'translate(' + lightPosition.x + 'px, ' + lightPosition.y + 'px)'"
+  ></div>
+
+  <!-- Navegación flotante -->
+  <nav
+    class="floating-nav fade-in"
+    aria-label="Main navigation"
+  >
+    <ul>
+      <li>
+        <a
+          href="#about"
+          (click)="scrollTo('about', $event)"
+          aria-label="About section"
+        >
+          <span
+            class="material-icons"
+            aria-hidden="true"
+          >person</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#experience"
+          (click)="scrollTo('experience', $event)"
+          aria-label="Experience section"
+        >
+          <span
+            class="material-icons"
+            aria-hidden="true"
+          >work</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#skills"
+          (click)="scrollTo('skills', $event)"
+          aria-label="Skills section"
+        >
+          <span
+            class="material-icons"
+            aria-hidden="true"
+          >code</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#projects"
+          (click)="scrollTo('projects', $event)"
+          aria-label="Projects section"
+        >
+          <span
+            class="material-icons"
+            aria-hidden="true"
+          >folder</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#contact"
+          (click)="scrollTo('contact', $event)"
+          aria-label="Contact section"
+        >
+          <span
+            class="material-icons"
+            aria-hidden="true"
+          >email</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section
+    class="hero-section"
+    aria-labelledby="main-heading"
+  >
+    <div
+      class="code-background"
+      aria-hidden="true"
+    >
+      <pre><code *ngFor="let line of codeLines">{{line}}</code></pre>
+    </div>
+
+    <div class="hero-content fade-in">
+      <h1
+        id="main-heading"
+        class="hero-title"
+      >
+        <span class="title-line">Armando Villanueva</span>
+        <span class="title-line">Software Engineer</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Transforming ideas into scalable digital solutions with clean, efficient code
+      </p>
+
+      <div class="hero-cta">
+        <a
+          (click)="scrollTo('projects', $event)"
+          class="cta-button primary"
+          aria-label="View my projects"
+        >
+          View My Work
+        </a>
+        <a
+          (click)="scrollTo('contact', $event)"
+          class="cta-button outline"
+          aria-label="Contact me"
+        >
+          Contact Me
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="tech-bubbles"
+      aria-hidden="true"
+    >
+      <div
+        class="bubble"
+        *ngFor="let tech of techStack"
+        [style.animation-delay]="tech.delay"
+        [attr.aria-label]="tech.name"
+      >
+        {{tech.name}}
+      </div>
+    </div>
+
+    <a
+      (click)="scrollTo('about', $event)"
+      class="scroll-down-arrow"
+      aria-label="Scroll down"
+    >
+      <span class="material-icons">expand_more</span>
+    </a>
+  </section>
+
+  <!-- Secciones del portafolio -->
+  <section
+    id="about"
+    class="section"
+    aria-labelledby="about-heading"
+  >
+    <app-about></app-about>
+  </section>
+
+  <section
+    id="experience"
+    class="section"
+    aria-labelledby="experience-heading"
+  >
+    <app-experience></app-experience>
+  </section>
+
+  <section
+    id="skills"
+    class="section"
+    aria-labelledby="skills-heading"
+  >
+    <app-skills></app-skills>
+  </section>
+
+  <section
+    id="projects"
+    class="section"
+    aria-labelledby="projects-heading"
+  >
+    <app-projects></app-projects>
+  </section>
+
+  <section
+    id="contact"
+    class="section"
+    aria-labelledby="contact-heading"
+  >
+    <app-contact></app-contact>
+  </section>
+
+  <!-- Footer -->
+  <footer
+    class="footer fade-in"
+    aria-labelledby="footer-heading"
+  >
+    <div class="footer-content">
+      <h2
+        id="footer-heading"
+        class="sr-only"
+      >Footer</h2>
+      <div
+        class="footer-logo"
+        aria-hidden="true"
+      >AV</div>
+
+      <div class="footer-links">
+        <a
+          href="https://github.com/avilla9"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub profile"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/armando-villanueva-711110167/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn profile"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="mailto:armandojvilla9@gmail.com"
+          aria-label="Send email"
+        >
+          Email
+        </a>
+      </div>
+
+      <p class="footer-copyright">
+        &copy; {{currentYear}} Armando Villanueva. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,81 @@
+<!-- components/skills/skills.component.html -->
+<section
+  id="skills"
+  class="skills-section"
+>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Skills & Expertise</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">My technical and professional capabilities</p>
+    </div>
+
+    <div class="skills-container">
+      <div class="skills-visualization">
+        <canvas
+          #skillsCanvas
+          width="600"
+          height="600"
+        ></canvas>
+      </div>
+
+      <div class="skills-details">
+        <div class="skills-category">
+          <h3>Technical Skills</h3>
+          <div class="skill-bars">
+            <div
+              class="skill-bar"
+              *ngFor="let skill of hardSkills"
+            >
+              <div class="skill-info">
+                <span class="skill-name">{{ skill.name }}</span>
+                <span class="skill-percent">{{ skill.level }}%</span>
+              </div>
+              <div class="skill-progress">
+                <div
+                  class="skill-progress-bar"
+                  [style.width.%]="skill.level"
+                  [style.background]="getProgressColor(skill.level)"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>Professional Skills</h3>
+          <div class="skill-circles">
+            <div
+              class="skill-circle"
+              *ngFor="let skill of softSkills"
+            >
+              <div class="circle-container">
+                <svg
+                  class="circle-chart"
+                  viewBox="0 0 36 36"
+                >
+                  <path
+                    class="circle-bg"
+                    d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  <path
+                    class="circle-fill"
+                    [style.stroke]="getProgressColor(skill.level)"
+                    d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  <!-- stroke-dasharray="{{ skill.level }}, 100" -->
+                </svg>
+                <div class="circle-text">{{ skill.level }}%</div>
+              </div>
+              <div class="circle-label">{{ skill.name }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

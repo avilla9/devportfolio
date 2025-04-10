@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  /* { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path:
       'projects', loadChildren: () => import('../features/work/work.module').then(m => m.WorkModule)
@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path:
       'home', loadChildren: () => import('../features/home/home.module').then(m => m.HomeModule)
-  }
+  } */
 ];
 
 @NgModule({

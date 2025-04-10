@@ -1,0 +1,206 @@
+// components/experience/experience.component.scss
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.experience-section {
+  padding: 6rem 0;
+  background: $light;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: $primary;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: rgba($dark, 0.7);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    &-progress {
+      position: absolute;
+      left: 50px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: rgba($primary, 0.2);
+      transform-origin: top;
+      z-index: 1;
+    }
+
+    &-item {
+      position: relative;
+      padding-left: 100px;
+      margin-bottom: 4rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s forwards;
+      animation-delay: calc(var(--animation-order) * 0.1s);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include mobile {
+        padding-left: 70px;
+      }
+    }
+
+    &-marker {
+      position: absolute;
+      left: 48px;
+      top: 0;
+      z-index: 2;
+
+      @include mobile {
+        left: 18px;
+      }
+    }
+
+    &-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: $primary;
+      border: 4px solid white;
+      box-shadow: 0 0 0 4px rgba($primary, 0.2);
+      transition: all 0.3s;
+
+      .timeline-item:hover & {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 6px rgba($primary, 0.3);
+      }
+    }
+
+    &-content {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -15px;
+        top: 30px;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid white;
+
+        @include mobile {
+          left: -10px;
+          top: 20px;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-right: 10px solid white;
+        }
+      }
+
+      .timeline-item:hover & {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &-date {
+      font-size: 0.9rem;
+      color: $primary;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    &-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: $dark;
+    }
+
+    &-company {
+      font-size: 1rem;
+      color: rgba($dark, 0.7);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    &-description {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+      color: rgba($dark, 0.8);
+
+      li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+    }
+
+    &-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+
+      .tech-tag {
+        background: rgba($primary, 0.1);
+        color: $primary;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

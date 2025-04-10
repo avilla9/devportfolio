@@ -6,16 +6,14 @@ import { LayoutModule } from './layout/layout.module';
 import { DataService } from 'src/shared/services/data.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LayoutModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent],
+  bootstrap: [],
   providers: [DataService],
 })
 export class AppModule { }

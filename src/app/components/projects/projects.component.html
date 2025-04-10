@@ -1,0 +1,104 @@
+<!-- components/projects/projects.component.html -->
+<section
+  id="projects"
+  class="projects-section"
+>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">A selection of my recent work</p>
+    </div>
+
+    <div class="projects-filter">
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter === 'all'"
+        (click)="filterProjects('all')"
+      >
+        All
+      </button>
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter === 'angular'"
+        (click)="filterProjects('angular')"
+      >
+        Angular
+      </button>
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter === 'laravel'"
+        (click)="filterProjects('laravel')"
+      >
+        Laravel
+      </button>
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter === 'python'"
+        (click)="filterProjects('python')"
+      >
+        Python
+      </button>
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter === 'mobile'"
+        (click)="filterProjects('mobile')"
+      >
+        Mobile
+      </button>
+    </div>
+
+    <div class="projects-grid">
+      <div
+        class="project-card"
+        *ngFor="let project of projects"
+      >
+        <div class="project-image">
+          <img
+            [src]="'assets/images/projects/' + project.image"
+            [alt]="project.title"
+          >
+          <div class="project-overlay">
+            <div class="project-links">
+              <a
+                *ngIf="project.links.demo"
+                [href]="project.links.demo"
+                target="_blank"
+                class="project-link"
+              >
+                <span class="material-icons">visibility</span>
+              </a>
+              <a
+                *ngIf="project.links.code"
+                [href]="project.links.code"
+                target="_blank"
+                class="project-link"
+              >
+                <span class="material-icons">code</span>
+              </a>
+              <a
+                *ngIf="project.links.caseStudy"
+                [href]="project.links.caseStudy"
+                class="project-link"
+              >
+                <span class="material-icons">article</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-tech">
+            <span
+              class="tech-tag"
+              *ngFor="let tech of project.technologies"
+            >{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

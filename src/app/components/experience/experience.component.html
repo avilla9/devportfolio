@@ -1,0 +1,47 @@
+<!-- components/experience/experience.component.html -->
+<section
+  id="experience"
+  class="experience-section"
+>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">My career journey and professional growth</p>
+    </div>
+
+    <div class="timeline">
+      <div
+        class="timeline-progress"
+        #timelineProgress
+      ></div>
+
+      <div
+        class="timeline-item"
+        *ngFor="let exp of experiences; let i = index"
+        [style.--animation-order]="i"
+      >
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-content">
+          <div class="timeline-date">{{ exp.period }}</div>
+          <h3 class="timeline-title">{{ exp.position }}</h3>
+          <h4 class="timeline-company">{{ exp.company }}</h4>
+
+          <ul class="timeline-description">
+            <li *ngFor="let desc of exp.description">{{ desc }}</li>
+          </ul>
+
+          <div class="timeline-tech">
+            <span
+              class="tech-tag"
+              *ngFor="let tech of exp.technologies"
+            >{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
