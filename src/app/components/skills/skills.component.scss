@@ -1,4 +1,6 @@
 // components/skills/skills.component.scss
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 .skills-section {
   padding: 6rem 0;
   background: white;

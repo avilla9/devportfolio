@@ -11,10 +11,10 @@ import * as THREE from 'three';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
-getProgressColor(arg0: number) {
-throw new Error('Method not implemented.');
-}
-  @ViewChild('skillsCanvas') private canvasRef!: ElementRef;
+  /* getProgressColor(arg0: number) {
+  throw new Error('Method not implemented.');
+  } */
+  @ViewChild('skillsCanvas', { static: false }) private canvasRef!: ElementRef<HTMLCanvasElement>;
 
   softSkills = [
     { name: 'Leadership', level: 90 },
@@ -43,6 +43,11 @@ throw new Error('Method not implemented.');
   }
 
   initThreeJS() {
+    if (!this.canvasRef?.nativeElement) {
+      console.error('Canvas element not found!');
+      return;
+    }
+
     const canvas = this.canvasRef.nativeElement;
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
     renderer.setSize(canvas.width, canvas.height);

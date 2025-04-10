@@ -1,4 +1,6 @@
 // components/about/about.component.scss
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 .about-section {
   padding: 6rem 0;
   background: white;
