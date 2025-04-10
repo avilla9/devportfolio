@@ -6,6 +6,7 @@ import { LayoutModule } from 'src/app/layout/layout.module';
 import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ComponentModule } from 'src/shared/components/component.module';
 
 @NgModule({
   declarations: [WorkComponent, CollectionComponent, DetailComponent],
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     NgOptionTemplateDirective,
     NgSelectComponent,
     NgSelectModule,
+    ComponentModule,
     RouterModule.forChild([
       { path: '', component: CollectionComponent },
       { path: 'detail/:title/:id', component: DetailComponent },

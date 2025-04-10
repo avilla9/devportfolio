@@ -1,0 +1,19 @@
+<div class="container">
+  <div
+    class="card"
+    *ngFor="let project of data"
+    (click)="open(project)"
+  >
+    <div class="info">
+      <div class="subtitle">{{project.title}}</div>
+      <div class="body">{{project.summary}}</div>
+      <div class="tags">
+        <div
+          *ngFor="let skill of project.skills"
+          class="chip"
+        >{{skill}}</div>
+      </div>
+    </div>
+    <img [src]=project.media[0]>
+  </div>
+</div>

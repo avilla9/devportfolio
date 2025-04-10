@@ -10,7 +10,7 @@ import { DataService } from 'src/shared/services/data.service';
 })
 export class DetailComponent implements OnInit {
   private dataService: DataService;
-  public data: ProjectInterface | undefined = undefined;
+  public data: ProjectInterface = <ProjectInterface>{};
 
   constructor(
     private route: ActivatedRoute,

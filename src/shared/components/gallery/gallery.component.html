@@ -1,0 +1,21 @@
+<div class="gallery">
+  <img
+    [src]=image
+    *ngFor="let image of data"
+    (click)="zoom(image)"
+  >
+</div>
+@if (selectedImage && open) {
+<app-dialog
+[background]=true
+[buttons]=true
+[title]="''"
+>
+  <div class="zoom">
+    <img
+      [src]=selectedImage
+      (click)="zoom()"
+    >
+  </div>
+</app-dialog>
+}

@@ -1,0 +1,40 @@
+<div class="dialog-overlay">
+  <div
+    class="dialog-content"
+    [ngClass]="{'background': background}"
+  >
+    @if (title) {
+    <div class="dialog-header">
+      <h3 class="dialog-title">{{ title }}</h3>
+      <button
+        class="close-button"
+        (click)="onClose()"
+      >
+        <app-svg name="close"></app-svg>
+      </button>
+    </div>
+    } @else {
+    <button
+      class="close-button float"
+      (click)="onClose()"
+    >
+      <app-svg [name]="'cancel'"></app-svg>
+    </button>
+    }
+    <div class="dialog-body">
+      <ng-content></ng-content>
+    </div>
+    @if (buttons) {
+    <div class="dialog-footer">
+      <button
+        class="primary"
+        (click)="onConfirm()"
+      >Confirm</button>
+      <button
+        class="secondary"
+        (click)="onClose()"
+      >Cancel</button>
+    </div>
+    }
+  </div>
+</div>

@@ -15,7 +15,7 @@ export class DataService {
         summary: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum ",
         skills: ["Chinook Salmon", "Aardvark", "Raven", "Gecko", "Nubian Ibex", "Echidna"],
-        media: ["https://picsum.photos/1600", "https://picsum.photos/1601/900", "https://picsum.photos/1200/800"]
+        media: ["https://picsum.photos/1600", "https://picsum.photos/1606", "https://picsum.photos/1310", "https://picsum.photos/1601/900", "https://picsum.photos/901/1602"]
       },
       {
         id: 1,

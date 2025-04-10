@@ -1,12 +1,10 @@
 <app-layout>
   <div class="container">
     <div class="presentation">
-      <div class="big-title">Armando Villanueva</div>
-      <div class="big-subtitle">Software Engineer</div>
+      <div class="big-title">{{data.title}}</div>
+      <div class="body">{{data.description}}</div>
+      <div class="body">skills</div>
     </div>
-    <div class="portrait">
-      <img src="../../assets/images/IMG_20220827_153606.jpg">
-    </div>
-    <button class="cta primary">Hire me</button>
+    <app-gallery [data]="data.media"></app-gallery>
   </div>
 </app-layout>

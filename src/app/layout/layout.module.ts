@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AppComponent } from '../app.component';
 import { CommonModule } from '@angular/common';
+import { ComponentModule } from 'src/shared/components/component.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CommonModule } from '@angular/common';
     NavigationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ComponentModule
   ],
   exports: [
     LayoutComponent,
