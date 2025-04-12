@@ -10,68 +10,70 @@
     class="floating-nav fade-in"
     aria-label="Main navigation"
   >
-    <ul>
-      <li>
-        <a
-          href="#about"
-          (click)="scrollTo('about', $event)"
-          aria-label="About section"
-        >
-          <span
-            class="material-icons"
-            aria-hidden="true"
-          >person</span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="#experience"
-          (click)="scrollTo('experience', $event)"
-          aria-label="Experience section"
-        >
-          <span
-            class="material-icons"
-            aria-hidden="true"
-          >work</span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="#skills"
-          (click)="scrollTo('skills', $event)"
-          aria-label="Skills section"
-        >
-          <span
-            class="material-icons"
-            aria-hidden="true"
-          >code</span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="#projects"
-          (click)="scrollTo('projects', $event)"
-          aria-label="Projects section"
-        >
-          <span
-            class="material-icons"
-            aria-hidden="true"
-          >folder</span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="#contact"
-          (click)="scrollTo('contact', $event)"
-          aria-label="Contact section"
-        >
-          <span
-            class="material-icons"
-            aria-hidden="true"
-          >email</span>
-        </a>
-      </li>
-    </ul>
+    <div class="nav-container">
+      <ul>
+        <li>
+          <a
+            href="#about"
+            (click)="scrollTo('about', $event)"
+            aria-label="About section"
+          >
+            <span
+              class="material-icons"
+              aria-hidden="true"
+            >person</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#experience"
+            (click)="scrollTo('experience', $event)"
+            aria-label="Experience section"
+          >
+            <span
+              class="material-icons"
+              aria-hidden="true"
+            >work</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#skills"
+            (click)="scrollTo('skills', $event)"
+            aria-label="Skills section"
+          >
+            <span
+              class="material-icons"
+              aria-hidden="true"
+            >code</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#projects"
+            (click)="scrollTo('projects', $event)"
+            aria-label="Projects section"
+          >
+            <span
+              class="material-icons"
+              aria-hidden="true"
+            >folder</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+            (click)="scrollTo('contact', $event)"
+            aria-label="Contact section"
+          >
+            <span
+              class="material-icons"
+              aria-hidden="true"
+            >email</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Hero Section -->

@@ -3,14 +3,14 @@
 @use '../../../styles/mixins' as *;
 
 .experience-section {
-  padding: 3rem 0;
+  padding: 2rem 0;
   background: $light;
   position: relative;
   overflow: hidden;
 
   .container {
     max-width: 1200px;
-    margin: 0 auto;
+
     padding: 0 2rem;
     position: relative;
     z-index: 2;
@@ -43,40 +43,47 @@
       font-size: 1.1rem;
       color: rgba($dark, 0.7);
       max-width: 600px;
-      margin: 0 auto;
+
     }
   }
 
   .timeline {
     position: relative;
-    max-width: 900px;
     height: 36rem;
-    margin: 0 auto;
     overflow-y: scroll;
     transition: all 0.3s ease;
-    padding: 0 .5rem 0 0;
+    padding: 0 0.5rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
     &::-webkit-scrollbar {
-      width: 8px; /* Slim scrollbar */
+      width: 8px;
+      /* Slim scrollbar */
     }
 
     &::-webkit-scrollbar-track {
-      background: transparent; /* Invisible track */
-      margin: 10px 0; /* Space at top & bottom */
+      background: transparent;
+      /* Invisible track */
+      margin: 10px 0;
+      /* Space at top & bottom */
     }
 
     &::-webkit-scrollbar-thumb {
-      background: #888; /* Scrollbar color */
-      border-radius: 4px; /* Rounded corners */
+      background: #888;
+      /* Scrollbar color */
+      border-radius: 4px;
+      /* Rounded corners */
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background: #555; /* Darker on hover */
+      background: #555;
+      /* Darker on hover */
     }
 
     &-progress {
       position: absolute;
-      left: 50px;
+      left: 0;
       top: 0;
       bottom: 0;
       width: 4px;
@@ -87,8 +94,6 @@
 
     &-item {
       position: relative;
-      padding-left: 100px;
-      padding-bottom: 4rem;
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 0.8s forwards;
@@ -105,8 +110,8 @@
 
     &-marker {
       position: absolute;
-      left: 42px;
-      top: 32px;
+      left: -2rem;
+      top: 2rem;
       z-index: 2;
 
       @include mobile {
@@ -115,8 +120,8 @@
     }
 
     &-dot {
-      width: 20px;
-      height: 20px;
+      width: 1rem;
+      height: 1rem;
       border-radius: 50%;
       background: $primary;
       border: 4px solid white;
