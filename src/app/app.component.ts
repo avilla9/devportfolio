@@ -49,6 +49,7 @@ import { AdminLayoutComponent } from './features/admin/admin-layout/admin-layout
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit, OnDestroy {
+  title = 'devportfolio';
   authService = inject(AuthService);
   themeService = inject(ThemeService); // Inyectar para inicializar el efecto del tema
 
