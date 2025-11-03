@@ -1,13 +1,23 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, LOCALE_ID, inject } from '@angular/core';
 import { PortfolioData } from '../interfaces/portfolio.model';
-import { DEFAULT_PORTFOLIO_DATA } from '../interfaces/portfolio.mock';
+import { DEFAULT_PORTFOLIO_DATA_EN } from '../interfaces/portfolio.mock.en';
+import { DEFAULT_PORTFOLIO_DATA_ES } from '../interfaces/portfolio.mock.es';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
+  private locale: string;
+  private initialData: PortfolioData;
+
   // Estado privado, la fuente de verdad en memoria
-  private _portfolioData = signal<PortfolioData>(DEFAULT_PORTFOLIO_DATA);
+  private _portfolioData = signal<PortfolioData>(null!);
+
+  constructor() {
+    this.locale = inject(LOCALE_ID);
+    this.initialData = this.getInitialPortfolioData(this.locale);
+    this._portfolioData.set(this.initialData);
+  }
 
   // --- Signals Públicos (Read-Only) para el Portafolio ---
   dataReady = signal(true); // Simula la carga de datos
@@ -34,6 +44,14 @@ export class DataService {
    * Restaura el estado en memoria al mock original (desde el Admin)
    */
   resetToDefault = () => {
-    this._portfolioData.set(DEFAULT_PORTFOLIO_DATA);
+    this._portfolioData.set(this.initialData);
   };
+
+  private getInitialPortfolioData(locale: string): PortfolioData {
+    if (locale.startsWith('es')) {
+      return DEFAULT_PORTFOLIO_DATA_ES;
+    } else {
+      return DEFAULT_PORTFOLIO_DATA_EN;
+    }
+  }
 }

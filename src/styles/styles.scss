@@ -1,4 +1,5 @@
 // styles/styles.scss
+@use 'sass:color'; // Import the color module
 @use './variables' as *;
 
 /* Import Google Fonts */
@@ -19,8 +20,6 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  color: $dark;
-  background: $white;
   overflow-x: hidden;
 }
 
@@ -69,7 +68,7 @@ img {
     border: 2px solid $primary;
 
     &:hover {
-      background: darken($primary, 10%);
+      background: color.adjust($primary, $lightness: -10%); // Fixed deprecation warning
       transform: translateY(-3px);
       box-shadow: 0 10px 20px rgba($primary, 0.3);
     }

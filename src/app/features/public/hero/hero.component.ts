@@ -16,13 +16,13 @@ import * as THREE from 'three';
       <!-- Contenido -->
       <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
         @if (profile(); as p) {
-          <h1 class="text-5xl md:text-7xl font-extrabold font-manrope text-gray-100">
+          <h1 class="text-5xl md:text-7xl font-extrabold font-manrope text-gray-900 dark:text-gray-100">
             {{ p.title }}
           </h1>
           <h2 class="text-2xl md:text-3xl font-light text-[#00ffaa] mt-4 mb-8">
             {{ p.subtitle }}
           </h2>
-          <p class="text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto mb-12">
+          <p class="text-xl text-gray-700 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto mb-12">
             {{ p.summary }}
           </p>
           <div class="flex justify-center gap-6">
@@ -30,7 +30,7 @@ import * as THREE from 'three';
             <ui-button styleType="secondary" (click)="goTo(p.githubUrl)">GitHub</ui-button>
           </div>
         } @else {
-          <div class="text-white">Cargando...</div>
+          <div class="text-gray-900 dark:text-white" i18n="@@heroLoading">Cargando...</div>
         }
       </div>
     </section>

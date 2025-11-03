@@ -1,12 +1,14 @@
-import { Injectable, signal, effect, Renderer2, RendererFactory2 } from '@angular/core';
-import { DEFAULT_PORTFOLIO_DATA } from '../interfaces/portfolio.mock';
+import { Injectable, signal, effect, Renderer2, RendererFactory2, inject } from '@angular/core';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
   private renderer: Renderer2;
-  isDark = signal(DEFAULT_PORTFOLIO_DATA.settings.theme === 'dark');
+  private dataService = inject(DataService);
+
+  isDark = signal(this.dataService.getFullData().settings.theme === 'dark');
 
   constructor(rendererFactory: RendererFactory2) {
     this.renderer = rendererFactory.createRenderer(null, null);

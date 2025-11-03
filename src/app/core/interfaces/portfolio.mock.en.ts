@@ -1,6 +1,6 @@
 import { PortfolioData } from './portfolio.model';
 
-export const DEFAULT_PORTFOLIO_DATA: PortfolioData = {
+export const DEFAULT_PORTFOLIO_DATA_EN: PortfolioData = {
   profile: {
     title: 'Armando Villanueva',
     subtitle: 'Senior Software Engineer | Technical Lead | Scalability & Advanced Automation Specialist',

@@ -8,9 +8,9 @@ import { UiProjectCardComponent } from '../../../shared/ui/ui-project-card/ui-pr
   standalone: true,
   imports: [CommonModule, UiProjectCardComponent],
   template: `
-    <section id="projects" class="py-24 bg-gray-900/50">
+    <section id="projects" class="py-24 bg-white dark:bg-gray-900/50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 class="text-4xl font-bold font-manrope text-center text-gray-100 mb-16">
+        <h3 class="text-4xl font-bold font-manrope text-center text-gray-900 dark:text-gray-100 mb-16" i18n="@@projectsTitle">
           Proyectos de Alto Impacto
         </h3>
 
@@ -21,7 +21,9 @@ import { UiProjectCardComponent } from '../../../shared/ui/ui-project-card/ui-pr
             }
           </div>
         } @else {
-          <div>Cargando proyectos...</div>
+          <ng-container>
+            <div i18n="@@projectsLoading">Cargando proyectos...</div>
+          </ng-container>
         }
       </div>
     </section>

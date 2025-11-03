@@ -9,9 +9,9 @@ import { SkillEntry } from '../../../core/interfaces/portfolio.model';
   standalone: true,
   imports: [CommonModule, UiCardComponent],
   template: `
-    <section id="skills" class="py-24 bg-gray-950">
+    <section id="skills" class="py-24 bg-white dark:bg-gray-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 class="text-4xl font-bold font-manrope text-center text-gray-100 mb-16">
+        <h3 class="text-4xl font-bold font-manrope text-center text-gray-900 dark:text-gray-100 mb-16" i18n="@@skillsTitle">
           Core Technical Expertise
         </h3>
 
@@ -19,12 +19,12 @@ import { SkillEntry } from '../../../core/interfaces/portfolio.model';
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             @for (category of categories; track category) {
               <ui-card additionalClasses="h-full">
-                <h4 class="text-2xl font-semibold font-manrope text-[#00ffaa] mb-6">{{ category }}</h4>
+                <h4 class="text-2xl font-semibold font-manrope text-[#00ffaa] mb-6" i18n="@@skillCategory{{category}}">{{ category }}</h4>
                 <ul class="space-y-4">
                   @for (skill of skillsByCategory(category); track skill.id) {
                     <li>
-                      <p class="text-md font-medium text-gray-200 mb-1">{{ skill.name }}</p>
-                      <div class="w-full bg-gray-700 h-2 rounded-full overflow-hidden">
+                      <p class="text-md font-medium text-gray-700 dark:text-gray-200 mb-1">{{ skill.name }}</p>
+                      <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full overflow-hidden">
                         <div class="bg-[#00ffaa] h-2" [style.width.%]="skill.level"></div>
                       </div>
                     </li>

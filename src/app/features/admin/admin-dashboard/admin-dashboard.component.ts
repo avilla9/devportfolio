@@ -11,10 +11,10 @@ import { PortfolioData, ExperienceEntry, ProjectEntry, SkillEntry } from '../../
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, UiButtonComponent, UiInputComponent],
   template: `
-    <h2 class="text-4xl font-bold font-manrope text-gray-100 mb-8">
+    <h2 class="text-4xl font-bold font-manrope text-gray-100 mb-8" i18n="@@adminDashboardTitle">
       Mock CMS Dashboard
     </h2>
-    <p class="text-gray-400 mb-4">
+    <p class="text-gray-400 mb-4" i18n="@@adminDashboardPersistenceWarning">
       Los cambios guardados aquí solo afectan el estado en memoria. 
       **No persistirán** después de recargar la página.
     </p>
@@ -23,66 +23,66 @@ import { PortfolioData, ExperienceEntry, ProjectEntry, SkillEntry } from '../../
 
       <!-- Botones de Acción Flotantes -->
       <div class="sticky top-0 z-10 bg-gray-950/80 backdrop-blur-sm p-4 -mx-8 -mt-8 mb-8 flex gap-4">
-        <ui-button type="submit">Guardar Cambios (en Memoria)</ui-button>
-        <ui-button type="button" styleType="secondary" (click)="onReset()">Restaurar Mock Original</ui-button>
+        <ui-button type="submit" i18n="@@adminDashboardSaveChanges">Guardar Cambios (en Memoria)</ui-button>
+        <ui-button type="button" styleType="secondary" (click)="onReset()" i18n="@@adminDashboardRestoreOriginal">Restaurar Mock Original</ui-button>
         @if (saveSuccess()) {
-          <span class="text-[#00ffaa] self-center">¡Guardado!</span>
+          <span class="text-[#00ffaa] self-center" i18n="@@adminDashboardSaved">¡Guardado!</span>
         }
       </div>
 
       <!-- Sección de Perfil -->
       <fieldset class="border border-gray-700 p-6 rounded-lg">
-        <legend class="text-xl font-semibold text-[#00ffaa] px-2">Perfil Principal</legend>
+        <legend class="text-xl font-semibold text-[#00ffaa] px-2" i18n="@@adminDashboardProfileSection">Perfil Principal</legend>
         <div formGroupName="profile" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-          <ui-input [control]="mainForm.get('profile.title')" label="Título"></ui-input>
-          <ui-input [control]="mainForm.get('profile.subtitle')" label="Subtítulo"></ui-input>
+          <ui-input [control]="mainForm.get('profile.title')" i18n-label="@@adminDashboardTitleLabel" label="Título"></ui-input>
+          <ui-input [control]="mainForm.get('profile.subtitle')" i18n-label="@@adminDashboardSubtitleLabel" label="Subtítulo"></ui-input>
           <div class="md:col-span-2">
-            <label class="block text-sm font-medium text-gray-300 mb-1">Resumen</label>
-            <textarea formControlName="summary" placeholder="Resumen" class="block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md shadow-sm focus:border-[#00ffaa] focus:ring-[#00ffaa] sm:text-sm"></textarea>
+            <label class="block text-sm font-medium text-gray-300 mb-1" i18n="@@adminDashboardSummaryLabel">Resumen</label>
+            <textarea formControlName="summary" i18n-placeholder="@@adminDashboardSummaryLabel" placeholder="Resumen" class="block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md shadow-sm focus:border-[#00ffaa] focus:ring-[#00ffaa] sm:text-sm"></textarea>
           </div>
-          <ui-input [control]="mainForm.get('profile.githubUrl')" label="URL GitHub"></ui-input>
-          <ui-input [control]="mainForm.get('profile.linkedinUrl')" label="URL LinkedIn"></ui-input>
+          <ui-input [control]="mainForm.get('profile.githubUrl')" i18n-label="@@adminDashboardGithubUrlLabel" label="URL GitHub"></ui-input>
+          <ui-input [control]="mainForm.get('profile.linkedinUrl')" i18n-label="@@adminDashboardLinkedinUrlLabel" label="URL LinkedIn"></ui-input>
         </div>
       </fieldset>
 
       <!-- Sección de Experiencia (FormArray) -->
       <fieldset class="border border-gray-700 p-6 rounded-lg">
-        <legend class="text-xl font-semibold text-[#00ffaa] px-2">Experiencia</legend>
+        <legend class="text-xl font-semibold text-[#00ffaa] px-2" i18n="@@adminDashboardExperienceSection">Experiencia</legend>
         <div formArrayName="experience">
           @for (expGroup of experienceFormArray.controls; track $index) {
             <div [formGroupName]="$index" class="border border-gray-800 p-4 rounded-md mb-4 relative">
-              <h4 class="text-lg font-medium text-gray-200 mb-2">Entrada #{{ $index + 1 }}</h4>
-              <button type="button" (click)="removeExperience($index)" class="absolute top-4 right-4 text-red-500">Eliminar</button>
+              <h4 class="text-lg font-medium text-gray-200 mb-2" i18n="@@adminDashboardEntryNumber">Entrada #{{ $index + 1 }}</h4>
+              <button type="button" (click)="removeExperience($index)" class="absolute top-4 right-4 text-red-500" i18n="@@adminDashboardDelete">Eliminar</button>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <ui-input [control]="expGroup.get('role')" label="Rol"></ui-input>
-                <ui-input [control]="expGroup.get('company')" label="Compañía"></ui-input>
-                <ui-input [control]="expGroup.get('dates')" label="Fechas"></ui-input>
+                <ui-input [control]="expGroup.get('role')" i18n-label="@@adminDashboardRoleLabel" label="Rol"></ui-input>
+                <ui-input [control]="expGroup.get('company')" i18n-label="@@adminDashboardCompanyLabel" label="Compañía"></ui-input>
+                <ui-input [control]="expGroup.get('dates')" i18n-label="@@adminDashboardDatesLabel" label="Fechas"></ui-input>
                 <div class="md:col-span-2">
-                  <label class="block text-sm font-medium text-gray-300 mb-1">Logros (uno por línea)</label>
-                  <textarea formControlName="achievements" placeholder="Logros (uno por línea)" class="block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md shadow-sm focus:border-[#00ffaa] focus:ring-[#00ffaa] sm:text-sm"></textarea>
+                  <label class="block text-sm font-medium text-gray-300 mb-1" i18n="@@adminDashboardAchievementsLabel">Logros (uno por línea)</label>
+                  <textarea formControlName="achievements" i18n-placeholder="@@adminDashboardAchievementsLabel" placeholder="Logros (uno por línea)" class="block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md shadow-sm focus:border-[#00ffaa] focus:ring-[#00ffaa] sm:text-sm"></textarea>
                 </div>
               </div>
             </div>
           }
         </div>
-        <ui-button type="button" styleType="secondary" (click)="addExperience()">Añadir Experiencia</ui-button>
+        <ui-button type="button" styleType="secondary" (click)="addExperience()" i18n="@@adminDashboardAddExperience">Añadir Experiencia</ui-button>
       </fieldset>
 
       <!-- Sección de Proyectos (FormArray) -->
       <fieldset class="border border-gray-700 p-6 rounded-lg">
-        <legend class="text-xl font-semibold text-[#00ffaa] px-2">Proyectos</legend>
+        <legend class="text-xl font-semibold text-[#00ffaa] px-2" i18n="@@adminDashboardProjectsSection">Proyectos</legend>
         <div formArrayName="projects">
           @for (projGroup of projectsFormArray.controls; track $index) {
             <div [formGroupName]="$index" class="border border-gray-800 p-4 rounded-md mb-4 relative">
-              <button type="button" (click)="removeProject($index)" class="absolute top-4 right-4 text-red-500">Eliminar</button>
-              <ui-input [control]="projGroup.get('title')" label="Título"></ui-input>
-              <textarea formControlName="description" placeholder="Descripción" class="block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md shadow-sm focus:border-[#00ffaa] focus:ring-[#00ffaa] sm:text-sm"></textarea>
-              <ui-input [control]="projGroup.get('imageUrl')" label="URL Imagen"></ui-input>
-              <ui-input [control]="projGroup.get('tags')" label="Tags (separados por coma)"></ui-input>
+              <button type="button" (click)="removeProject($index)" class="absolute top-4 right-4 text-red-500" i18n="@@adminDashboardDelete">Eliminar</button>
+              <ui-input [control]="projGroup.get('title')" i18n-label="@@adminDashboardTitleLabel" label="Título"></ui-input>
+              <textarea formControlName="description" i18n-placeholder="@@adminDashboardDescriptionLabel" placeholder="Descripción" class="block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md shadow-sm focus:border-[#00ffaa] focus:ring-[#00ffaa] sm:text-sm"></textarea>
+              <ui-input [control]="projGroup.get('imageUrl')" i18n-label="@@adminDashboardImageUrlLabel" label="URL Imagen"></ui-input>
+              <ui-input [control]="projGroup.get('tags')" i18n-label="@@adminDashboardTagsLabel" label="Tags (separados por coma)"></ui-input>
             </div>
           }
         </div>
-        <ui-button type="button" styleType="secondary" (click)="addProject()">Añadir Proyecto</ui-button>
+        <ui-button type="button" styleType="secondary" (click)="addProject()" i18n="@@adminDashboardAddProject">Añadir Proyecto</ui-button>
       </fieldset>
 
     </form>

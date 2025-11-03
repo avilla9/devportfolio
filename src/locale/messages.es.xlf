@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="headerExperienceLink" datatype="html">
+        <source>Experiencia</source>
+        <target>Experiencia</target>
+      </trans-unit>
+      <trans-unit id="headerProjectsLink" datatype="html">
+        <source>Proyectos</source>
+        <target>Proyectos</target>
+      </trans-unit>
+      <trans-unit id="headerSkillsLink" datatype="html">
+        <source>Habilidades</source>
+        <target>Habilidades</target>
+      </trans-unit>
+      <trans-unit id="headerContactLink" datatype="html">
+        <source>Contacto</source>
+        <target>Contacto</target>
+      </trans-unit>
+      <trans-unit id="headerLightButton" datatype="html">
+        <source>Light</source>
+        <target>Claro</target>
+      </trans-unit>
+      <trans-unit id="headerDarkButton" datatype="html">
+        <source>Dark</source>
+        <target>Oscuro</target>
+      </trans-unit>
+      <trans-unit id="heroLoading" datatype="html">
+        <source>Cargando...</source>
+        <target>Cargando...</target>
+      </trans-unit>
+      <trans-unit id="experienceTitle" datatype="html">
+        <source>Experiencia &amp; Liderazgo de Impacto</source>
+        <target>Experiencia &amp; Liderazgo de Impacto</target>
+      </trans-unit>
+      <trans-unit id="experienceLoading" datatype="html">
+        <source>Cargando experiencia...</source>
+        <target>Cargando experiencia...</target>
+      </trans-unit>
+      <trans-unit id="projectsTitle" datatype="html">
+        <source>Proyectos de Alto Impacto</source>
+        <target>Proyectos de Alto Impacto</target>
+      </trans-unit>
+      <trans-unit id="projectsLoading" datatype="html">
+        <source>Cargando proyectos...</source>
+        <target>Cargando proyectos...</target>
+      </trans-unit>
+      <trans-unit id="skillsTitle" datatype="html">
+        <source>Core Technical Expertise</source>
+        <target>Experiencia Técnica Central</target>
+      </trans-unit>
+      <trans-unit id="skillCategoryAIAutomation" datatype="html">
+        <source>AI/Automation</source>
+        <target>IA/Automatización</target>
+      </trans-unit>
+      <trans-unit id="skillCategoryBackendData" datatype="html">
+        <source>Backend/Data</source>
+        <target>Backend/Datos</target>
+      </trans-unit>
+      <trans-unit id="skillCategoryFrontend" datatype="html">
+        <source>Frontend</source>
+        <target>Frontend</target>
+      </trans-unit>
+      <trans-unit id="skillCategoryInfraDevOps" datatype="html">
+        <source>Infra/DevOps</source>
+        <target>Infra/DevOps</target>
+      </trans-unit>
+      <trans-unit id="contactTitle" datatype="html">
+        <source>Hablemos de Arquitectura</source>
+        <target>Hablemos de Arquitectura</target>
+      </trans-unit>
+      <trans-unit id="contactSubtitle" datatype="html">
+        <source>Conectemos para discutir cómo puedo aportar valor a su equipo.</source>
+        <target>Conectemos para discutir cómo puedo aportar valor a su equipo.</target>
+      </trans-unit>
+      <trans-unit id="footerCopyright" datatype="html">
+        <source>Armando Villanueva. Todos los derechos reservados.</source>
+        <target>Armando Villanueva. Todos los derechos reservados.</target>
+      </trans-unit>
+      <trans-unit id="footerBuiltWith" datatype="html">
+        <source>Construido con Angular, Tailwind CSS y <x id="PH"/>pasión<x id="PH_1"/>.</source>
+        <target>Construido con Angular, Tailwind CSS y <x id="PH"/>pasión<x id="PH_1"/>.</target>
+      </trans-unit>
+      <trans-unit id="loginAdminPanelLogin" datatype="html">
+        <source>Admin Panel Login</source>
+        <target>Inicio de Sesión del Panel de Administración</target>
+      </trans-unit>
+      <trans-unit id="loginUsername" datatype="html">
+        <source>Usuario</source>
+        <target>Usuario</target>
+      </trans-unit>
+      <trans-unit id="loginPassword" datatype="html">
+        <source>Contraseña</source>
+        <target>Contraseña</target>
+      </trans-unit>
+      <trans-unit id="loginLoading" datatype="html">
+        <source>Cargando...</source>
+        <target>Cargando...</target>
+      </trans-unit>
+      <trans-unit id="loginEnter" datatype="html">
+        <source>Entrar</source>
+        <target>Entrar</target>
+      </trans-unit>
+      <trans-unit id="loginInvalidCredentials" datatype="html">
+        <source>Credenciales incorrectas (Hint: admin/admin)</source>
+        <target>Credenciales incorrectas (Sugerencia: admin/admin)</target>
+      </trans-unit>
+      <trans-unit id="adminEditPortfolio" datatype="html">
+        <source>Editar Portafolio</source>
+        <target>Editar Portafolio</target>
+      </trans-unit>
+      <trans-unit id="adminLogout" datatype="html">
+        <source>Logout</source>
+        <target>Cerrar Sesión</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardTitle" datatype="html">
+        <source>Mock CMS Dashboard</source>
+        <target>Panel de Control CMS Mock</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardPersistenceWarning" datatype="html">
+        <source>Los cambios guardados aquí solo afectan el estado en memoria. **No persistirán** después de recargar la página.</source>
+        <target>Los cambios guardados aquí solo afectan el estado en memoria. **No persistirán** después de recargar la página.</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardSaveChanges" datatype="html">
+        <source>Guardar Cambios (en Memoria)</source>
+        <target>Guardar Cambios (en Memoria)</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardRestoreOriginal" datatype="html">
+        <source>Restaurar Mock Original</source>
+        <target>Restaurar Mock Original</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardSaved" datatype="html">
+        <source>¡Guardado!</source>
+        <target>¡Guardado!</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardProfileSection" datatype="html">
+        <source>Perfil Principal</source>
+        <target>Perfil Principal</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardTitleLabel" datatype="html">
+        <source>Título</source>
+        <target>Título</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardSubtitleLabel" datatype="html">
+        <source>Subtítulo</source>
+        <target>Subtítulo</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardSummaryLabel" datatype="html">
+        <source>Resumen</source>
+        <target>Resumen</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardGithubUrlLabel" datatype="html">
+        <source>URL GitHub</source>
+        <target>URL GitHub</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardLinkedinUrlLabel" datatype="html">
+        <source>URL LinkedIn</source>
+        <target>URL LinkedIn</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardExperienceSection" datatype="html">
+        <source>Experiencia</source>
+        <target>Experiencia</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardEntryNumber" datatype="html">
+        <source>Entrada #<x id="INTERPOLATION"/></source>
+        <target>Entrada #<x id="INTERPOLATION"/></target>
+      </trans-unit>
+      <trans-unit id="adminDashboardDelete" datatype="html">
+        <source>Eliminar</source>
+        <target>Eliminar</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardRoleLabel" datatype="html">
+        <source>Rol</source>
+        <target>Rol</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardCompanyLabel" datatype="html">
+        <source>Compañía</source>
+        <target>Compañía</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardDatesLabel" datatype="html">
+        <source>Fechas</source>
+        <target>Fechas</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardAchievementsLabel" datatype="html">
+        <source>Logros (uno por línea)</source>
+        <target>Logros (uno por línea)</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardAddExperience" datatype="html">
+        <source>Añadir Experiencia</source>
+        <target>Añadir Experiencia</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardProjectsSection" datatype="html">
+        <source>Proyectos</source>
+        <target>Proyectos</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardImageUrlLabel" datatype="html">
+        <source>URL Imagen</source>
+        <target>URL Imagen</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardTagsLabel" datatype="html">
+        <source>Tags (separados por coma)</source>
+        <target>Etiquetas (separadas por coma)</target>
+      </trans-unit>
+      <trans-unit id="adminDashboardAddProject" datatype="html">
+        <source>Añadir Proyecto</source>
+        <target>Añadir Proyecto</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

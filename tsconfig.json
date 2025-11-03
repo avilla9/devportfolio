@@ -24,7 +24,8 @@
     ],
     "types": [
       "node",
-      "three"
+      "three",
+      "@angular/localize"
     ]
   },
   "angularCompilerOptions": {

@@ -15,10 +15,10 @@ import { UiButtonComponent } from '../../../shared/ui/ui-button/ui-button.compon
         <h1 class="text-2xl font-bold font-manrope text-[#00ffaa] mb-8">P-CMS-AV20</h1>
         <nav class="flex-grow">
           <ul>
-            <li><a href="#" class="block py-2 px-3 bg-gray-800 text-white rounded-md">Editar Portafolio</a></li>
+            <li><a href="#" class="block py-2 px-3 bg-gray-800 text-white rounded-md" i18n="@@adminEditPortfolio">Editar Portafolio</a></li>
           </ul>
         </nav>
-        <ui-button styleType="secondary" (click)="authService.logout()">Logout</ui-button>
+        <ui-button styleType="secondary" (click)="authService.logout()" i18n="@@adminLogout">Logout</ui-button>
       </aside>
 
       <!-- Main Content -->

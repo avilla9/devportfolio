@@ -8,10 +8,10 @@ import { UiTimelineNodeComponent } from '../../../shared/ui/ui-timeline-node/ui-
   standalone: true,
   imports: [CommonModule, UiTimelineNodeComponent],
   template: `
-    <section id="experience" class="py-24 bg-gray-950">
+    <section id="experience" class="py-24 bg-white dark:bg-gray-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 class="text-4xl font-bold font-manrope text-center text-gray-100 mb-16">
-          Experiencia & Liderazgo de Impacto
+        <h3 class="text-4xl font-bold font-manrope text-center text-gray-900 dark:text-gray-100 mb-16" i18n="@@experienceTitle">
+          Experiencia &amp; Liderazgo de Impacto
         </h3>
 
         <div class="max-w-3xl mx-auto">
@@ -20,7 +20,7 @@ import { UiTimelineNodeComponent } from '../../../shared/ui/ui-timeline-node/ui-
               <ui-timeline-node [entry]="entry" />
             }
           } @else {
-            <div>Cargando experiencia...</div>
+            <div i18n="@@experienceLoading">Cargando experiencia...</div>
           }
         </div>
       </div>
