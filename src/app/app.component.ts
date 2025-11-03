@@ -1,36 +1,75 @@
-// app.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { AuthService } from './core/services/auth.service';
+import { ThemeService } from './core/services/theme.service';
+import { PublicLayoutComponent } from './features/public/public-layout/public-layout.component';
+import { LoginComponent } from './features/admin/login/login.component';
+import { AdminLayoutComponent } from './features/admin/admin-layout/admin-layout.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  imports: [CommonModule, PublicLayoutComponent, LoginComponent, AdminLayoutComponent],
+  template: `
+    <!-- 
+      NOTA DE PRODUCCIÓN: 
+      Estos scripts y configuraciones deben ser añadidos a 'angular.json' y 'index.html'
+      en un proyecto real de Angular CLI. Se incluyen aquí para que el prompt
+      funcione sin intervención humana.
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'neon': '#00ffaa',
+            },
+            fontFamily: {
+              sans: ['Inter', 'Manrope', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Lógica de Enrutamiento Mock Principal -->
+    @if (currentPath() === '/admin') {
+      @if (isAuthenticated()) {
+        <app-admin-layout />
+      } @else {
+        <app-login />
+      }
+    } @else {
+      <app-public-layout />
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
-  title = 'Armando Villanueva - Software Engineer';
+export class AppComponent implements OnInit, OnDestroy {
+  authService = inject(AuthService);
+  themeService = inject(ThemeService); // Inyectar para inicializar el efecto del tema
+
+  isAuthenticated = this.authService.isAuthenticated; // Signal read-only
+  currentPath = signal(window.location.pathname);
+
+  private popstateListener = () => this.currentPath.set(window.location.pathname);
 
   ngOnInit() {
-    gsap.registerPlugin(ScrollTrigger);
-    this.initAnimations();
+    // Escuchar cambios en la URL (botones atrás/adelante)
+    window.addEventListener('popstate', this.popstateListener);
+
+    // Simular navegación (para que el usuario pueda escribir /admin en la URL)
+    // En un proyecto real, esto sería manejado por Angular Router
+    const path = window.location.pathname;
+    if (path !== this.currentPath()) {
+      this.currentPath.set(path);
+    }
   }
 
-  initAnimations() {
-    gsap.from('section', {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      stagger: 0.3,
-      scrollTrigger: {
-        trigger: 'section',
-        start: 'top 80%',
-        toggleActions: 'play none none none'
-      }
-    });
+  ngOnDestroy() {
+    window.removeEventListener('popstate', this.popstateListener);
   }
 }
